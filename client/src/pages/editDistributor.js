@@ -23,6 +23,13 @@ function EditDistributor() {
 
   const navigate = useNavigate();
 
+  const countries = [
+    "Australia",
+    "Germany",
+    "United States",
+    "The Netherlands",
+  ];
+
   const getDistributor = async () => {
     try {
       const response = await axios.post(
@@ -102,10 +109,17 @@ function EditDistributor() {
             defaultValue={distributors.country}
             onChange={(e) => setCountry(e.target.value)}
           >
-            <option value="Australia">Australia</option>
-            <option value="Germany">Germany</option>
-            <option value="United States">United States</option>
-            <option value="The Netherlands">The Netherlands</option>
+            {countries.map((country) =>
+              country === distributors.country ? (
+                <option key={country} value={country} selected>
+                  {country}
+                </option>
+              ) : (
+                <option key={country} value={country}>
+                  {country}
+                </option>
+              )
+            )}
           </Select>
         </FormControl>
         <FormControl>
