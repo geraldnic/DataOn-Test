@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { FormControl, FormLabel, Box, Button, Input } from "@chakra-ui/react";
+import {
+  FormControl,
+  FormLabel,
+  Box,
+  Button,
+  Input,
+  Select,
+} from "@chakra-ui/react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
@@ -24,7 +31,6 @@ function EditDistributor() {
           id,
         }
       );
-      console.log(response.data);
       setDistributors(response.data);
     } catch (err) {
       console.log(err);
@@ -56,10 +62,10 @@ function EditDistributor() {
         phone,
         email,
       });
-      navigate('/distributors');
     } catch (err) {
       console.error(err);
     }
+    navigate("/distributors");
   };
 
   return (
@@ -91,11 +97,16 @@ function EditDistributor() {
         </FormControl>
         <FormControl>
           <FormLabel>Country</FormLabel>
-          <Input
-            type="text"
+          <Select
+            placeholder="Select Country"
             defaultValue={distributors.country}
             onChange={(e) => setCountry(e.target.value)}
-          />
+          >
+            <option value="Australia">Australia</option>
+            <option value="Germany">Germany</option>
+            <option value="United States">United States</option>
+            <option value="The Netherlands">The Netherlands</option>
+          </Select>
         </FormControl>
         <FormControl>
           <FormLabel>Phone</FormLabel>

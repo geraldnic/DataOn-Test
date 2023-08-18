@@ -19,7 +19,6 @@ function Distributors() {
   const getDistributors = async () => {
     try {
       const response = await axios.get("http://localhost:3001/getDistributor");
-      console.log(response.data);
       setDistributors(response.data);
     } catch (err) {
       console.log(err);
@@ -42,7 +41,7 @@ function Distributors() {
           </Thead>
           <Tbody>
             {distributors.map((item) => (
-              <Tr>
+              <Tr key={item._id}>
                 <Td>{item.name}</Td>
                 <Td>{item.city}</Td>
                 <Td>

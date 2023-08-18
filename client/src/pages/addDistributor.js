@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { FormControl, FormLabel, Box, Button, Input } from "@chakra-ui/react";
+import {
+  FormControl,
+  FormLabel,
+  Box,
+  Button,
+  Input,
+  Select,
+} from "@chakra-ui/react";
 import axios from "axios";
 
 function AddDistributor() {
@@ -37,7 +44,15 @@ function AddDistributor() {
         </FormControl>
         <FormControl>
           <FormLabel>Country</FormLabel>
-          <Input type="text" onChange={(e) => setCountry(e.target.value)} />
+          <Select
+            placeholder="Select country"
+            onChange={(e) => setCountry(e.target.value)}
+          >
+            <option value="Australia">Australia</option>
+            <option value="Germany">Germany</option>
+            <option value="United States">United States</option>
+            <option value="The Netherlands">The Netherlands</option>
+          </Select>
         </FormControl>
         <FormControl>
           <FormLabel>Phone</FormLabel>

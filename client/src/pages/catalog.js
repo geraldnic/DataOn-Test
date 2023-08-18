@@ -17,7 +17,6 @@ function Catalog() {
   const getCatalog = async () => {
     try {
       const response = await axios.get("http://localhost:3001/getCatalog");
-      console.log(response.data);
       setCatalog(response.data);
     } catch (err) {
       console.log(err);
@@ -39,25 +38,22 @@ function Catalog() {
         </Thead>
         <Tbody>
           {catalog.map((item) => (
-            <Tr>
+            <Tr key={item._id}>
               <Td
                 maxW={"200px"}
                 whiteSpace={"pre-wrap"}
-                wordWrap={"break-word"}
               >
                 {item.bean}
               </Td>
               <Td
                 maxW={"200px"}
                 whiteSpace={"pre-wrap"}
-                wordWrap={"break-word"}
               >
                 {item.description}
               </Td>
               <Td
                 maxW={"200px"}
                 whiteSpace={"pre-wrap"}
-                wordWrap={"break-word"}
               >
                 ${item.price}
               </Td>

@@ -9,8 +9,7 @@ function Home() {
   const getCatalog = async () => {
     try {
       const response = await axios.get("http://localhost:3001/getCatalog");
-      console.log(response.data);
-      setCatalog(response.data[0]);
+      setCatalog(response.data[response.data.length - 1]);
     } catch (err) {
       console.log(err);
     }
@@ -26,7 +25,7 @@ function Home() {
       <Text fontWeight={"bold"}>Sale Price</Text>
       <Text>{catalog.price}</Text>
       <Text fontWeight={"bold"}>Description</Text>
-      <Text maxW={"70%"} whiteSpace={"pre-wrap"} wordWrap={"break-word"}>
+      <Text maxW={"70%"} whiteSpace={"pre-wrap"}>
         {catalog.description}
       </Text>
     </Box>

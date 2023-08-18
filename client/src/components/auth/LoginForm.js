@@ -44,7 +44,7 @@ export default function LoginForm() {
     }
   };
   return (
-    <Flex justify={"center"} bg={useColorModeValue("gray.50", "gray.800")}>
+    <Flex bg={useColorModeValue("gray.50", "gray.800")}>
       <Stack
         spacing={4}
         w={"full"}
@@ -53,7 +53,7 @@ export default function LoginForm() {
         rounded={"xl"}
         boxShadow={"lg"}
         p={6}
-        my={12}
+        m={12}
       >
         <form onSubmit={handleSubmit}>
           <FormControl id="username" isRequired>
