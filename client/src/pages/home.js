@@ -21,9 +21,9 @@ function Home() {
   return (
     <Box w={"100vw"}>
       <Text fontWeight={"bold"}>Bean of the Day</Text>
-      <Text>{catalog.bean}</Text>
+      {catalog.bean && <Text>{catalog.bean}</Text>}
       <Text fontWeight={"bold"}>Sale Price</Text>
-      <Text>$ {catalog.price.toFixed(2)}</Text>
+      {catalog.price !== undefined && <Text>$ {catalog.price.toFixed(2)}</Text>}
       <Text fontWeight={"bold"}>Description</Text>
       <Text maxW={"70%"} whiteSpace={"pre-wrap"}>
         {catalog.description}

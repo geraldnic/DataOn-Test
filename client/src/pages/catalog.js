@@ -55,7 +55,7 @@ function Catalog() {
                 maxW={"200px"}
                 whiteSpace={"pre-wrap"}
               >
-                $ {item.price.toFixed(2)}
+                 {item.price !== undefined && <Text>$ {item.price.toFixed(2)}</Text>}
               </Td>
             </Tr>
           ))}
