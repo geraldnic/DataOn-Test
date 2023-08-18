@@ -23,7 +23,7 @@ function Home() {
       <Text fontWeight={"bold"}>Bean of the Day</Text>
       <Text>{catalog.bean}</Text>
       <Text fontWeight={"bold"}>Sale Price</Text>
-      <Text>{catalog.price}</Text>
+      <Text>$ {catalog.price.toFixed(2)}</Text>
       <Text fontWeight={"bold"}>Description</Text>
       <Text maxW={"70%"} whiteSpace={"pre-wrap"}>
         {catalog.description}
